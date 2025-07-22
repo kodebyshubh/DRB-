@@ -1,0 +1,188 @@
+/* === Global Styles & Glassmorphism Background === */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0e7ff 0%, #fff5f7 100%);
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  color: #272835;
+}
+
+.main-wrapper {
+  min-height: 100vh;
+  max-width: 1150px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  text-align: center;
+  margin-top: 40px;
+}
+header h1 {
+  font-size: 2.6rem;
+  letter-spacing: 2px;
+  color: #353a60;
+  font-family: 'Montserrat', sans-serif;
+}
+header .subtitle {
+  color: #7581a1;
+  font-size: 1.15rem;
+  margin-bottom: 32px;
+}
+footer {
+  text-align: center;
+  color: #b9b9cc;
+  font-size: 0.98rem;
+  margin-top: 36px;
+}
+
+/* ==== Layout for Form & Preview ==== */
+.resume-container {
+  display: flex;
+  gap: 44px;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: rgba(247, 250, 252, 0.93);
+  box-shadow: 0 12px 40px 0 rgba(92,115,231,0.07), 0 3px 21px 0 rgba(44,62,80,0.06);
+  backdrop-filter: blur(3.5px);
+  border-radius: 24px;
+  margin: 32px 0;
+  padding: 32px 30px;
+}
+
+form {
+  flex: 0 1 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+form label {
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: #4157a4;
+  margin-bottom: 3px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid #e3eaf7;
+  border-radius: 8px;
+  background: rgba(238,242,255, 0.95);
+  font-size: 1rem;
+  margin-top: 4px;
+  font-family: inherit;
+  color: #2a3e69;
+  transition: border 0.18s, box-shadow 0.18s;
+  box-sizing: border-box;
+  outline: none;
+}
+form input:focus,
+form textarea:focus {
+  border-color: #6e7cff;
+  background: #fff;
+  box-shadow: 0 0 0 1.5px #bdbdff;
+}
+
+form textarea {
+  min-height: 48px;
+  max-height: 180px;
+  resize: vertical;
+}
+
+.btn {
+  background: linear-gradient(90deg,#536dfe 0%, #a8bfff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.08rem;
+  padding: 12px 0;
+  margin-top: 8px;
+  transition: background 0.18s, transform 0.16s, box-shadow 0.18s;
+  box-shadow: 0 4px 12px 0 rgba(80, 112, 255, 0.10);
+  cursor: pointer;
+}
+.btn:hover, .btn:focus {
+  background: linear-gradient(90deg,#3143c5 0%, #7581a1 100%);
+  transform: translateY(-2px) scale(1.023);
+}
+
+/* ==== Resume Preview Panel ==== */
+#resumePreview {
+  flex: 1;
+  background: rgba(255,255,255,0.85);
+  border-radius: 18px;
+  border: 1.2px solid #e3eaf7;
+  box-shadow: 0 8px 35px 0 rgba(92,115,231,0.11);
+  padding: 32px 36px;
+  min-width: 320px;
+  min-height: 570px;
+  overflow-x: auto;
+  animation: fadeIn 0.4s;
+}
+
+#resumePreview h2 {
+  margin: 0 0 14px 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #354ad1;
+  text-align: center;
+  letter-spacing: 1.3px;
+}
+#resumePreview .info {
+  color: #425379;
+  font-size: 1.04rem;
+  margin-bottom: 18px;
+  text-align: center;
+}
+#resumePreview .section {
+  margin-top: 26px;
+}
+#resumePreview h3 {
+  font-size: 1.13rem;
+  color: #5769c9;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  letter-spacing: 0.8px;
+  border-bottom: 1px solid #dde2fa;
+  display: inline-block;
+  padding-bottom: 3px;
+}
+#resumePreview p {
+  color: #27345d;
+  font-size: 1.02rem;
+  margin: 2px 0 0 0;
+  white-space: pre-line;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; filter: blur(5px);}
+  to { opacity: 1; filter: blur(0);}
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 1000px) {
+  .resume-container {
+    flex-direction: column;
+    gap: 24px;
+    padding: 18px 6vw;
+  }
+  #resumePreview {
+    padding: 26px 10px;
+    min-width: 0;
+    min-height: 340px;
+  }
+}
+
+@media (max-width: 600px) {
+  header h1 { font-size: 2.0rem; }
+  .resume-container {
+    padding: 10px 0;
+  }
+  #resumePreview {
+    padding: 14px 2vw;
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🌟 Resume Builder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main-wrapper">
+    <header>
+      <h1>Resume Builder</h1>
+      <p class="subtitle">Create a stunning resume. See it live as you type.</p>
+    </header>
+    <div class="resume-container">
+      <form autocomplete="off">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="e.g. Ananya Sharma">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="e.g. ananya@example.com">
+
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" placeholder="e.g. 9876543210">
+
+        <label for="education">Education</label>
+        <textarea id="education" placeholder="e.g. B.Tech in Computer Science, ABC University, 2025"></textarea>
+
+        <label for="experience">Experience</label>
+        <textarea id="experience" placeholder="e.g. Intern at XYZ Corp, Summer 2024"></textarea>
+
+        <label for="skills">Skills</label>
+        <textarea id="skills" placeholder="e.g. JavaScript, React, Data Analysis"></textarea>
+        
+        <label for="hobbies">Hobbies</label>
+        <textarea id="hobbies" placeholder="e.g. Reading, Football, Travelling"></textarea>
+
+        <button type="button" class="btn" onclick="downloadPDF()">Download PDF</button>
+      </form>
+      <section id="resumePreview" aria-label="Live Resume Preview">
+        <h2 id="previewName">Your Name</h2>
+        <div class="info">
+          <span id="previewEmail">Email</span><br>
+          <span id="previewPhone">Phone</span>
+        </div>
+        <div class="section">
+          <h3>Education</h3>
+          <p id="previewEducation">Your education here</p>
+        </div>
+        <div class="section">
+          <h3>Experience</h3>
+          <p id="previewExperience">Your experience here</p>
+        </div>
+        <div class="section">
+          <h3>Skills</h3>
+          <p id="previewSkills">Your skills here</p>
+        </div>
+        <div class="section">
+          <h3>Hobbies</h3>
+          <p id="previewHobbies">Your hobbies here</p>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <p>&copy; 2025 Resume Builder &mdash; Powered by You</p>
+    </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
